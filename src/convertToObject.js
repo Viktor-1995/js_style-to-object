@@ -16,7 +16,7 @@ function convertToObject(sourceString) {
     return result;
   }
 
-  for (const cssPair of separeteArray) {
+  separeteArray.map((cssPair) => {
     if (cssPair.length > 1 && cssPair) {
       const cssRule = cssPair.trim();
 
@@ -26,7 +26,9 @@ function convertToObject(sourceString) {
         result[key.trim()] = value.trim();
       }
     }
-  }
+
+    return result;
+  });
 
   return result;
 }
